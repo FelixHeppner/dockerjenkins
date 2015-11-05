@@ -44,7 +44,7 @@ if [[ $# -lt 1 ]] || [[ "$1" == "--"* ]]; then
 	if [ -n "$dockerGroupName" ]; then 
 		exec sg $dockerGroupName "$cmdLine"
 	else
-	   	exec "$cmdLine"
+	   	exec $cmdLine
 	fi
 fi
 

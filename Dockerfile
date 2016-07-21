@@ -1,4 +1,4 @@
-FROM jenkins:1.642.2
+FROM jenkins:2.7.1
 
 USER root
 
@@ -30,10 +30,15 @@ RUN apt-get update && \
     apt-get -y install vnc4server && \
     rm -rf /var/lib/apt/lists/*
 
+
+
+
+
 RUN  echo 'deb http://downloads.sourceforge.net/project/ubuntuzilla/mozilla/apt all main' > /etc/apt/sources.list.d/ubuntuzilla.list && \
      apt-key adv --recv-keys --keyserver keyserver.ubuntu.com C1289A29 && \
      apt-get update &&  \
      apt-get install firefox &&\
+     apt-get --no-install-recommends -y  install libgtk-3-0&&\
      rm -rf /var/lib/apt/lists/*
 
 
